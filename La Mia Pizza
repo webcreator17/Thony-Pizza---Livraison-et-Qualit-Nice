@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Thony Pizza - Pizza napolitaine artisanale cuite au feu de bois à Nice. Livraison et qualité italienne. 33cm de bonheur." />
+  <title>Thony Pizza | Pizza Napolitaine Artisanale à Nice</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --primary: #e63946;
+      --secondary: #1d3557;
+      --light: #f1faee;
+      --dark: #2b2d42;
+      --accent: #ffba08;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fff;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--secondary);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Hero */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1605478371310-5e0e9d27d2e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0,10 Q25,0 50,10 T100,10 L100,20 L0,20 Z" fill="%23e63946" opacity="0.1"/></svg>') repeat-x bottom;
+      animation: fire 8s linear infinite;
+    }
+
+    @keyframes fire {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 0; }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(230,57,70,0.3);
+    }
+
+    .btn:hover {
+      background: #d62839;
+      transform: translateY(-3px);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--secondary);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0 5px;
+    }
+
+    /* Features */
+    .features {
+      padding: 80px 0;
+      background: var(--light);
+      text-align: center;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .feature-card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* Hours & Location */
+    .info-section {
+      padding: 80px 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .hours, .address {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .hours h3, .address h3 {
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .day {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .day:last-child { border: none; }
+
+    .closed {
+      color: #999;
+      font-style: italic;
+    }
+
+    .map-container {
+      margin-top: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    /* About */
+    .about {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .highlight {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--secondary);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .info-grid, .about-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Chez Thony</h1>
+      <p class="badge">🔥 Feu de bois</p>
+      <p class="badge">🇮🇹 Ingrédients italiens</p>
+      <p class="badge">🍕 Format 33cm</p>
+      <p>L'authentique pizza napolitaine</p>
+      <a href="#order" class="btn">Commandez maintenant</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:20px;">Une Envie de Pizza ?</h2>
+      <p style="text-align:center; max-width:700px; margin:0 auto 40px;">
+        Commandez dès maintenant et savourez nos pizzas artisanales italiennes livrées directement chez vous
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-clock"></i>
+          <h3>Ouvert 6j/7</h3>
+          <p>Sauf le lundi</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-fire"></i>
+          <h3>Cuisson Feu de Bois</h3>
+          <p>À 400°C pour un goût authentique</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-pizza-slice"></i>
+          <h3>Format XXL</h3>
+          <p>33 cm de pur bonheur</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Venez nous voir</h3>
+          <p>Sur l'Avenue de la Californie</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours & Location -->
+  <section class="info-section">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:50px;">Retrouvez-Nous à Nice</h2>
+
+      <div class="info-grid">
+        <div class="hours">
+          <h3>🕒 Horaires d'Ouverture</h3>
+          <p><em>Service en soirée uniquement</em></p>
+          <div class="day"><span>Lundi</span><span class="closed">Fermé</span></div>
+          <div class="day"><span>Mardi - Dimanche</span><span>🌞 11:30 - 15:00</span></div>
+          <div class="day"><span></span><span>🌙 18:30 - 23:00</span></div>
+        </div>
+
+        <div class="address">
+          <h3>📍 Notre Adresse</h3>
+          <p><strong>Au cœur de Nice</strong><br>
+          42 Avenue de la Californie<br>
+          06200 Nice</p>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.472005047552!2d7.243589!3d43.688889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cddadb6e5e6d8d%3A0x9f8e5e5e5e5e5e5e!2s42%20Av.%20de%20la%20Californie%2C%2006200%20Nice!5e0!3m2!1sfr!2sfr!4v1234567890" 
+              width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+          <p style="margin-top:15px;">
+            <a href="https://maps.google.com/?q=42+Avenue+de+la+Californie,+06200+Nice" target="_blank" class="btn" style="font-size:0.9rem; padding:10px 20px;">
+              Voir l'itinéraire
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <h2>Notre Histoire</h2>
+          <h3 style="color:var(--primary); margin:20px 0 15px;">Pizza Artisanale Italienne</h3>
+          <p>
+            Chez Thony, nous préparons des pizzas artisanales authentiques de <strong>33cm</strong>, cuites au feu de bois selon la tradition napolitaine.
+          </p>
+
+          <div class="highlight">
+            <strong>🔥 Cuisson au Feu de Bois</strong><br>
+            <small>Tradition napolitaine pour un goût authentique</small>
+          </div>
+          <div class="highlight">
+            <strong>🧀 Ingrédients Italiens de Qualité</strong><br>
+            <small>Mozzarella Fior di Latte, tomates San Marzano, huile d'olive extra vierge</small>
+          </div>
+          <div class="highlight">
+            <strong>📏 Format XXL 33 cm</strong><br>
+            <small>Pizzas généreuses et savoureuses</small>
+          </div>
+
+          <p style="margin-top:20px;">
+            <a href="#menu" style="color:var(--primary); font-weight:600;">En savoir plus →</a>
+          </p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pizza au feu de bois - Thony Pizza Nice">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Thony Pizza - Tous droits réservés</p>
+      <p>
+        Site créé avec ❤️ par 
+        <a href="https://www.webcreator.media/" target="_blank">WebCreator Media</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
